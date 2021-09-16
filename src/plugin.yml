@@ -1,0 +1,20 @@
+name: Survival-Plugin
+author: pasi
+version: 1.0
+main: de.luca.main.Main
+api-version: 1.16
+
+commands:
+   teamchat:
+      aliases: [tc]
+   gamemode:
+      aliases: [gm]
+   invsee:
+   help:
+      aliases: [h]
+   msg:
+   msgtoggle:
+   maintenance:
+   clearchat:
+   
+   
