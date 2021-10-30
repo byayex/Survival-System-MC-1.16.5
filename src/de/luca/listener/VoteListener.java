@@ -32,7 +32,7 @@ public class VoteListener implements Listener
 		{
 			p.sendMessage(MessageConfig.VoteReceive);
 			
-			p.setExp(p.getExp() + 5);
+			p.setLevel(p.getLevel() + 5);
 			
 			p.getInventory().addItem(new ItemStack(Material.BEEF, 16));
 			p.getInventory().addItem(new ItemStack(Material.IRON_INGOT, 6));

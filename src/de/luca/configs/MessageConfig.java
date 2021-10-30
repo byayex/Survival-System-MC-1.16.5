@@ -16,7 +16,7 @@ public class MessageConfig {
     public static String prefix, teamchatprefix, FirstjoinMessage, playerJoinMessage, playerQuitMessage, NoConsole, NoCommand, UsageTeamChat,
     TeamChatSuccessfully, GameModeUsage, FehlendeRechte, AlreadyInThisGameMode, ChangedGameModeSuccefully, InvSeeUsage, PlayerNotFound,
     helpMessage1, helpMessage2, helpMessage3, helpMessage4, helpMessage5, MsgUsage, PlayerMsgOff, MSGEnabled, MSGDisabled, WartungsmodusAn,
-    WartungsmodusAus, VoteReceive, ChatwurdeGeleert, KickOnWartungsmodus;
+    WartungsmodusAus, VoteReceive, ChatwurdeGeleert, KickOnWartungsmodus, OPisDisabled;
 
     public MessageConfig() {
     	file = new File(Main.plugin.getDataFolder() + "/Messages.yml");
@@ -27,9 +27,9 @@ public class MessageConfig {
     private void load() {
         if(!getFile().exists()) {
 
-            getCfg().set("prefix", "&5Server-System &f>> &7");
-            getCfg().set("teamchatprefix", "&6Chikara-Teamchat - &2%player% &f>> &7");
-            getCfg().set("FirstjoinMessage", "&5Herzlich Willkommen auf Chikara-Survival.de");
+            getCfg().set("prefix", "&5System &f>> &7");
+            getCfg().set("teamchatprefix", "&6Teamchat - &2%player% &f>> &7");
+            getCfg().set("FirstjoinMessage", "&5Herzlich Willkommen auf unserem Server");
             getCfg().set("playerJoinMessage", "&5%player% hat den Server betreten.");
             getCfg().set("playerQuitMessage", "&5%player% hat den Server verlassen.");
             getCfg().set("NoConsole", "&6Die Konsole darf dies nicht!");

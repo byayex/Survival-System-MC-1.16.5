@@ -8,71 +8,81 @@ import org.bukkit.entity.Player;
 
 import de.luca.configs.MessageConfig;
 
-public class InvSee implements CommandExecutor 
+public class InvSee implements CommandExecutor
 {
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender instanceof Player)
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+	{
+		if (sender instanceof Player)
 		{
-			if(args.length == 2)
+			if (args.length == 2)
 			{
-				if(args[0].equals("ec") || args[0].equals("inv"))
+				if (args[0].equals("ec") || args[0].equals("inv"))
 				{
 					Player target = Bukkit.getPlayer(args[1]);
-					if(target != null)
+					if (target != null)
 					{
-						if(args[0].equals("ec"))
+						if (args[0].equals("ec"))
 						{
-							if(!sender.hasPermission("serversystem.invsee.ec"))
+							if (!sender.hasPermission("serversystem.invsee.ec"))
 							{
 								sender.sendMessage(MessageConfig.FehlendeRechte);
 								return false;
 							}
-							
-							if(target.hasPermission("serversystem.invsee.ec"))
+
+							if (target.hasPermission("serversystem.invsee.ec.admin"))
 							{
-								if(sender.hasPermission("serversystem.invsee.ec.admin"))
+								if (sender.hasPermission("serversystem.invsee.ec.admin"))
 								{
 									((Player) sender).openInventory(target.getEnderChest());
+								} else
+								{
+									sender.sendMessage(MessageConfig.FehlendeRechte);
 								}
-							}else {
+							} else
+							{
 								((Player) sender).openInventory(target.getEnderChest());
 							}
 						}
-						
-						if(args[0].equals("inv"))
+
+						if (args[0].equals("inv"))
 						{
-							if(!sender.hasPermission("serversystem.invsee.inv"))
+							if (!sender.hasPermission("serversystem.invsee.inv"))
 							{
 								sender.sendMessage(MessageConfig.FehlendeRechte);
 								return false;
 							}
-							
-							if(target.hasPermission("serversystem.invsee.inv"))
+
+							if (target.hasPermission("serversystem.invsee.inv.admin"))
 							{
-								if(sender.hasPermission("serversystem.invsee.inv.admin"))
+								if (sender.hasPermission("serversystem.invsee.inv.admin"))
 								{
 									((Player) sender).openInventory(target.getInventory());
+								} else
+								{
+									sender.sendMessage(MessageConfig.FehlendeRechte);
 								}
-							}else {
+							} else
+							{
 								((Player) sender).openInventory(target.getInventory());
 							}
 						}
-					}else {
+					} else
+					{
 						sender.sendMessage(MessageConfig.PlayerNotFound);
 					}
-				}else 
+				} else
 				{
 					sender.sendMessage(MessageConfig.InvSeeUsage);
 				}
-			}else 
+			} else
 			{
 				sender.sendMessage(MessageConfig.InvSeeUsage);
 				return false;
 			}
 			return false;
-		}else 
+		} else
 		{
 			sender.sendMessage(MessageConfig.NoConsole);
 			return false;
