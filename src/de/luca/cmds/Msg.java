@@ -8,39 +8,51 @@ import org.bukkit.entity.Player;
 
 import de.luca.configs.MessageConfig;
 
-public class Msg implements CommandExecutor 
+public class Msg implements CommandExecutor
 {
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender instanceof Player)
-		{		
-			if(args.length > 2)
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+	{
+		if (sender instanceof Player)
+		{
+			if (args.length > 2)
 			{
 				Player p = (Player) sender;
 				Player target = Bukkit.getPlayer(args[0]);
 				String message = "";
-                for (int i = 0; i < args.length; i++) 
-                {
-                    message = message + args[i] + " ";
-                }
-				if(target != null)
+				for (int i = 0; i < args.length; i++)
 				{
-					if(MsgToggle.msgoff.contains(target.getUniqueId()))
+					message = message + args[i] + " ";
+				}
+				if (target != null)
+				{
+					if (target != sender)
 					{
-						p.sendMessage(MessageConfig.PlayerMsgOff);
-					}else 
+						if (MsgToggle.msgoff.contains(target.getUniqueId()))
+						{
+							p.sendMessage(MessageConfig.PlayerMsgOff);
+						} else
+						{
+							sender.sendMessage(
+									MessageConfig.prefix + "§6An " + target.getDisplayName() +" §7-> §6 " + message);
+							target.sendMessage(
+									MessageConfig.prefix + p.getDisplayName() + "§6an §4Dich §7-> §6 " + message);
+						}
+					} else
 					{
-						target.sendMessage(MessageConfig.prefix + p.getDisplayName() + "§6an §4Dich §7-> §6 " + message);
+						sender.sendMessage(MessageConfig.MsgSelf);
 					}
-				}else {
+				} else
+				{
 					sender.sendMessage(MessageConfig.PlayerNotFound);
 				}
-			}else {
-				
+			} else
+			{
+				sender.sendMessage(MessageConfig.MsgUsage);
 			}
 			return false;
-		}else 
+		} else
 		{
 			sender.sendMessage(MessageConfig.NoConsole);
 			return false;

@@ -21,7 +21,7 @@ public class ClearChat implements CommandExecutor
 				{
 					for(Player all : Bukkit.getOnlinePlayers())
 					{
-						all.sendMessage("&6");
+						all.sendMessage("§6");
 					}
 				}
 				Bukkit.broadcastMessage(MessageConfig.ChatwurdeGeleert.replaceAll("%player%", ((Player) sender).getPlayer().getDisplayName()));

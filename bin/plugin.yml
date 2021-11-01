@@ -16,5 +16,6 @@ commands:
    msgtoggle:
    maintenance:
    clearchat:
+      aliases: [cc]
    
    

@@ -50,6 +50,7 @@ public class Main extends JavaPlugin {
 		this.getCommand("msgtoggle").setExecutor(new MsgToggle());
 		this.getCommand("maintenance").setExecutor(new MaintenanceMode());
 		this.getCommand("clearchat").setExecutor(new ClearChat());
+		this.getCommand("cc").setExecutor(new ClearChat());
 	}
 	
 	private void registerListener() 

@@ -5,14 +5,14 @@
 
 Commands [permissions]:
 
-/clearchat|/cc [serversystem.chat.clear]
-/gamemode|/gm [serversystem.gamemode.survival/creative/spectator]
-/invsee [serversystem.invsee.ec/inv|serversystem.invsee.ec/inv.admin] Mit der Berechtigung .admin können leute ohne .admin deine EC/ dein Inventar nicht sehen.
-/maintenance [serversystem.maintenance.toggle -> serversystem.maintenance.join]
-/msg
-/msgtoggle
-/help|/h
-/tc|/teamchat [serversystem.teamchat]
+- /clearchat|/cc [serversystem.chat.clear]
+- /gamemode|/gm [serversystem.gamemode.survival/creative/spectator]
+- /invsee [serversystem.invsee.ec/inv|serversystem.invsee.ec/inv.admin] Mit der Berechtigung .admin können leute ohne .admin deine EC/ dein Inventar nicht sehen.
+- /maintenance [serversystem.maintenance.toggle -> serversystem.maintenance.join]
+- /msg
+- /msgtoggle
+- /help|/h
+- /tc|/teamchat [serversystem.teamchat]
 
 ---
 

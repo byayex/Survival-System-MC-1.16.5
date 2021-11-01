@@ -18,7 +18,8 @@ public class Help implements CommandExecutor
 			sender.sendMessage(MessageConfig.helpMessage2);
 			sender.sendMessage(MessageConfig.helpMessage3);
 			sender.sendMessage(MessageConfig.helpMessage4);
-			sender.sendMessage(MessageConfig.helpMessage5);			
+			sender.sendMessage(MessageConfig.helpMessage5);	
+			sender.sendMessage(MessageConfig.helpMessage6);		
 			return false;
 		}else 
 		{

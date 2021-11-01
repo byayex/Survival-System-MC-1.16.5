@@ -15,8 +15,8 @@ public class MessageConfig {
 
     public static String prefix, teamchatprefix, FirstjoinMessage, playerJoinMessage, playerQuitMessage, NoConsole, NoCommand, UsageTeamChat,
     TeamChatSuccessfully, GameModeUsage, FehlendeRechte, AlreadyInThisGameMode, ChangedGameModeSuccefully, InvSeeUsage, PlayerNotFound,
-    helpMessage1, helpMessage2, helpMessage3, helpMessage4, helpMessage5, MsgUsage, PlayerMsgOff, MSGEnabled, MSGDisabled, WartungsmodusAn,
-    WartungsmodusAus, VoteReceive, ChatwurdeGeleert, KickOnWartungsmodus, OPisDisabled;
+    helpMessage1, helpMessage2, helpMessage3, helpMessage4, helpMessage5, helpMessage6, MsgUsage, PlayerMsgOff, MSGEnabled, MSGDisabled, WartungsmodusAn,
+    WartungsmodusAus, VoteReceive, ChatwurdeGeleert, KickOnWartungsmodus, OPisDisabled, MsgSelf;
 
     public MessageConfig() {
     	file = new File(Main.plugin.getDataFolder() + "/Messages.yml");
@@ -47,14 +47,16 @@ public class MessageConfig {
             getCfg().set("helpMessage3", "3");
             getCfg().set("helpMessage4", "4");
             getCfg().set("helpMessage5", "5");
+            getCfg().set("helpMessage6", "6");
             getCfg().set("PlayerMsgOff", "&6Der Spieler hat Privat-Nachrichten mit /msgtoggle deaktiviert.");
             getCfg().set("MSGEnabled", "&6Privat-Nachrichten wurden erfolgreich aktiviert.");
             getCfg().set("MSGDisabled", "&6Privat-Nachrichten wurden erfolgreich deaktiviert.");
+            getCfg().set("MsgSelf", "&6Du kannst dir selber keine Nachricht schreiben.");
             getCfg().set("WartungsmodusAn", "&6Der Wartungsmodus wurde aktiviert!");
             getCfg().set("WartungsmodusAus", "&6Der Wartungsmodus wurde deaktiviert!");
             getCfg().set("VoteReceive", "&6Du hast deine Vote-Belohnung erhalten. Diese besteht aus 5 XP-Leveln und einigen Ingame Items.");
             getCfg().set("ChatwurdeGeleert", "&6%player% &7hat den Chat geleert.");
-            getCfg().set("KickOnWartungsmodus", "§6Wartungsmodus ist aktiv.\\n\\n§5Entschuldigung für die Unannehmlichkeiten!");
+            getCfg().set("KickOnWartungsmodus", "§6Wartungsmodus ist aktiv. §5Entschuldigung für die Unannehmlichkeiten!");
             
             try {
                 getCfg().save(getFile());
@@ -82,6 +84,7 @@ public class MessageConfig {
         helpMessage3 = convert("helpMessage3");
         helpMessage4 = convert("helpMessage4");
         helpMessage5 = convert("helpMessage5");
+        helpMessage6 = convert("helpMessage6");
         PlayerMsgOff = convert("PlayerMsgOff");
         MSGEnabled = prefix + convert("MSGEnabled");
         MSGDisabled = prefix + convert("MSGDisabled");
@@ -90,6 +93,7 @@ public class MessageConfig {
         VoteReceive = prefix + convert("VoteReceive");
         ChatwurdeGeleert = prefix + convert("ChatwurdeGeleert");
         KickOnWartungsmodus = prefix + convert("KickOnWartungsmodus");
+        MsgSelf = prefix + convert("MsgSelf");
     }
 
     private String convert(String in) {
