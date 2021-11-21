@@ -1,8 +1,8 @@
-name: Survival-Plugin
-author: pasi
+name: Survival-Server-System
+author: pasi1337#8901
 version: 1.0
 main: de.luca.main.Main
-api-version: 1.16
+softdepend: NuVotifier
 
 commands:
    teamchat:

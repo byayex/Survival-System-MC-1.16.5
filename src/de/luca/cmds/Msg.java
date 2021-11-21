@@ -16,7 +16,7 @@ public class Msg implements CommandExecutor
 	{
 		if (sender instanceof Player)
 		{
-			if (args.length > 2)
+			if (args.length >= 2)
 			{
 				Player p = (Player) sender;
 				Player target = Bukkit.getPlayer(args[0]);
@@ -37,7 +37,7 @@ public class Msg implements CommandExecutor
 							sender.sendMessage(
 									MessageConfig.prefix + "§6An " + target.getDisplayName() +" §7-> §6 " + message);
 							target.sendMessage(
-									MessageConfig.prefix + p.getDisplayName() + "§6an §4Dich §7-> §6 " + message);
+									MessageConfig.prefix + "§4" + p.getDisplayName() + "§6an §4Dich §7-> §6 " + message);
 						}
 					} else
 					{

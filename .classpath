@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/luca-/eclipse-workspace/spigot-1.16.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/luca-/eclipse-workspace/nuvotifier-2.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/luca-/Desktop/Projects/eclipse-workspace/spigot-1.16.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/luca-/Desktop/Projects/eclipse-workspace/nuvotifier-2.7.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
